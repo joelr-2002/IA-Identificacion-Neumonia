@@ -2,6 +2,12 @@ const uploadForm = document.getElementById("upload-form");
 const imageInput = document.getElementById("image-input");
 const imageContainer = document.getElementById("image-container");
 
+imageInput.addEventListener("change", (e) => {
+    const file = e.target.files[0];
+    const imageURL = URL.createObjectURL(file);
+    imageContainer.innerHTML = `<img src="${imageURL}" alt="Preview">`;
+});
+
 uploadForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     
@@ -9,7 +15,7 @@ uploadForm.addEventListener("submit", async (e) => {
     formData.append("image", imageInput.files[0]);
 
     try {
-        const response = await fetch("upload.js", {
+        const response = await fetch("../../backend/api/upload.js", {
             method: "POST",
             body: formData,
         });
