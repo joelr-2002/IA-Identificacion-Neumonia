@@ -1,6 +1,7 @@
 const http = require('http');
 const fs = require('fs');
 const formidable = require('formidable');
+const path = require('path');
 
 const server = http.createServer((req, res) => {
     if (req.method === 'POST' && req.url === '/upload') {
@@ -11,10 +12,10 @@ const server = http.createServer((req, res) => {
                 res.end('Error uploading image.');
                 return;
             }
-            
+
             const oldPath = files.image.path;
-            const newPath = `uploads/${files.image.name}`;
-            
+            const newPath = path.join(__dirname, 'data', files.image.name);
+
             fs.rename(oldPath, newPath, (err) => {
                 if (err) {
                     res.writeHead(500, { 'Content-Type': 'text/plain' });

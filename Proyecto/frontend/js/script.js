@@ -15,7 +15,7 @@ uploadForm.addEventListener("submit", async (e) => {
     formData.append("image", imageInput.files[0]);
 
     try {
-        const response = await fetch("../../backend/api/upload.js", {
+        const response = await fetch("../../../Proyecto/backend/api/upload.js", {
             method: "POST",
             body: formData,
         });
