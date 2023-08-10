@@ -14,7 +14,8 @@ const server = http.createServer((req, res) => {
             }
 
             const oldPath = files.image.path;
-            const newPath = path.join(__dirname, 'data', files.image.name);
+            const newFileName = generateUniqueFileName(files.image.name);
+            const newPath = path.join(__dirname, 'data', newFileName);
 
             fs.rename(oldPath, newPath, (err) => {
                 if (err) {
@@ -32,6 +33,12 @@ const server = http.createServer((req, res) => {
         res.end('Not found.');
     }
 });
+
+function generateUniqueFileName(originalName) {
+    const timestamp = Date.now();
+    const extension = path.extname(originalName);
+    return `${timestamp}${extension}`;
+}
 
 server.listen(3000, () => {
     console.log('Server listening on port 3000');
