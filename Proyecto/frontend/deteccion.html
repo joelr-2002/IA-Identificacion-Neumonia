@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/051307d18d.js" crossorigin="anonymous"></script>
+    <title>Identificación de Neumonía</title>
+</head>
+<body class="fondos">
+
+    <nav id="nv" class="navbar navbar-expand-lg bg-light roboto" style="font-size: 20px;">
+            
+    </nav>
+    <div class="container">
+        <!--TITULO-->
+
+        
+        <div>
+            <h1 class="color1 centerx" ><b >Identificación de Neumonía<b></h1>
+
+        </div>
+
+        
+
+
+
+        <div class="main">
+            <div class="container-fluid">
+                <div class="row centerx mt-4">
+                    <div class="col-12 col-md-6">
+                        
+                            <form action="/upload" method="post" enctype="multipart/form-data" id="upload-form">
+                                <input type="file" name="image" id="image-input" accept="image/*">
+                                <br>
+                                <br>
+                                <button class="btn" style="background-color:#6BCBA5; border-radius:10px; color:white" type="submit">Subir Imagen</button>
+                            </form>
+                        <br>
+                        <div class="message">
+
+                            <!--Aqui ira la respuesta de identificación de neumonia-->
+                            <p>Mensaje de muestra </p>
+
+                        </div>
+                            
+                        
+                    </div>
+        
+                
+                    <div class="col-12 col-md-6">
+                            <div id="image-container">
+                                <!-- Aquí se mostrará la imagen subida -->
+                            </div>
+                            
+                        
+                    </div>
+           
+                </div>
+                </div>
+            
+        </div>
+    </div>
+
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+    <script src="js/all.js"></script>
+</body>
+</html>
